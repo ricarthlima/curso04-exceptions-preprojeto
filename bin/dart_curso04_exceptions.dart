@@ -22,11 +22,21 @@
 // }
 
 void main() {
-  double amount = double.parse("25,33"); // FormatException
-  recursiveFunction(1); // StackOverflowError
+  print("Started Main");
+  function01();
+  print("Finished Main");
 }
 
-recursiveFunction(int count) {
-  print(count);
-  recursiveFunction(count + 1);
+function01() {
+  print("Started F01");
+  function02();
+  print("Finished F01");
+}
+
+function02() {
+  print("Started F02");
+  for (int i = 1; i <= 5; i++) {
+    print(i);
+  }
+  print("Finished F02");
 }
