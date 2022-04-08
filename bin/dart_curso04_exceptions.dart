@@ -40,6 +40,7 @@ function02(int otherJ) {
   print("Started F02");
   for (int i = 1; i <= 5; i++) {
     print(i);
+    double amount = double.parse("Not a number.");
   }
   otherJ = 50;
   print("Finished F02");
