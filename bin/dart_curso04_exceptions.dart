@@ -2,9 +2,27 @@ import 'controllers/bank_controller.dart';
 import 'exceptions/bank_controller_exceptions.dart';
 import 'models/account.dart';
 
+void testingNullSafety() {
+  print("My String".runtimeType);
+  print(null.runtimeType);
+  Null;
+
+  String cantBeNull = "My String";
+  //cantBeNull = null;
+
+  String? canBeNull = "My String";
+  print(canBeNull.runtimeType);
+  canBeNull = null;
+  print(canBeNull.runtimeType);
+
+  Account? myNullAccount = null; // Explicar o warning
+  //print(myNullAccount.balance); // Explicar o erro
+  print(
+      myNullAccount!.balance); // Mostrar o problema, contextualizar no passado
+}
+
 void main() {
-  //assert(3 > 4);
-  //assert(3 > 4, "Que pena, 3 não é maior que 4");
+  testingNullSafety();
 
   // Criando o banco
   BankController bankController = BankController();
